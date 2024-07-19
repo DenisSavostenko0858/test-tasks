@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="./public/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo List</h1>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search tasks...">
+        <ul id="search-results"></ul>
+      </div>
+    </header>
+    <main>
+      <div class="filters">
+        <div class="date-filter">
+          <input type="text" id="date-picker" placeholder="Select date">
+          <button id="today-button">Today</button>
+          <button id="week-button">This week</button>
+        </div>
+        <div class="sort-filter">
+          <label for="sort-select">Sort by:</label>
+          <select id="sort-select">
+            <option value="date-asc">Date (Ascending)</option>
+            <option value="date-desc">Date (Descending)</option>
+          </select>
+        </div>
+        <div class="status-filter">
+          <input type="checkbox" id="show-incomplete">
+          <label for="show-incomplete">Show incomplete tasks</label>
+        </div>
+      </div>
+      <div class="task-list">
+        <!-- Tasks will be dynamically added here -->
+      </div>
+    </main>
+  </div>
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <p>Due date: <span id="modal-due-date"></span></p>
+      <p>Status: <span id="modal-status"></span></p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>
